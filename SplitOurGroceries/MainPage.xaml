@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SplitOurGroceries.MainPage"
-             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:shres="clr-namespace:SplitOurGroceries.Resources;assembly=SplitOurGroceries.Resources">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+
+            <dxe:TextEdit LabelText="Test"/>
+
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
