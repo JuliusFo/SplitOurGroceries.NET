@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SplitOurGroceries.MainPage"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
-             xmlns:shres="clr-namespace:SplitOurGroceries.Resources;assembly=SplitOurGroceries.Resources">
+             xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
 
-            <dxe:TextEdit LabelText="Test"/>
+            <dxe:TextEdit LabelText="{x:Static shreslabels:LabelResources.PersonCount}"/>
 
             <Image
                 Source="dotnet_bot.png"
