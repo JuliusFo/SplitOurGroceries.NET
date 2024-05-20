@@ -1,25 +1,36 @@
-﻿namespace SplitOurGroceries
+﻿using SplitOurGroceries.Resources.Labels;
+
+namespace SplitOurGroceries
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        #region Fields
+
+        
+
+        #endregion
+
+        #region Constructor
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+        #endregion
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        #region Properties
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        public int PersonCounter { get; set; } = 1;
+
+        public string PersonCounterTx => string.Format(LabelResources.PersonCount, PersonCounter);
+
+        #endregion
+
+        #region Methods
+
+
+
+        #endregion
     }
-
 }
