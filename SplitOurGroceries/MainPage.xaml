@@ -26,11 +26,13 @@
                               IsReadOnly="True"/>
 
                 <!-- One less person -->
-                <Button Grid.Column="2"
+                <Button Command="{Binding RemovePersonCommand}"
+                        Grid.Column="2"
                         Text="-"/>
 
                 <!-- One more person -->
-                <Button Grid.Column="4"
+                <Button Command="{Binding AddPersonCommand}"
+                        Grid.Column="4"
                         Text="+"/>
             </Grid>
         </VerticalStackLayout>

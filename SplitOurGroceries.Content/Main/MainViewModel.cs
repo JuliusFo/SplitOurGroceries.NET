@@ -1,8 +1,9 @@
 ﻿using SplitOurGroceries.Resources.Labels;
+using System.ComponentModel;
 
 namespace SplitOurGroceries.Content.Main
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         #region Fields
 
@@ -14,12 +15,25 @@ namespace SplitOurGroceries.Content.Main
 
         public MainViewModel()
         {
+            #region Commands
 
+            AddPersonCommand = new Command(AddPerson);
+            RemovePersonCommand = new Command(RemovePerson);
+
+            #endregion
         }
 
         #endregion
 
         #region Properties
+
+        #region Commands
+
+        public Command AddPersonCommand { get; }
+
+        public Command RemovePersonCommand { get; }
+
+        #endregion
 
         public int PersonCounter { get; set; } = 1;
 
@@ -29,7 +43,31 @@ namespace SplitOurGroceries.Content.Main
 
         #region Methods
 
+        private void AddPerson()
+        {
+            PersonCounter++;
+            RaisePropertyChanged(nameof(PersonCounterTx));
+        }
 
+        private void RemovePerson()
+        {
+            PersonCounter--;
+            RaisePropertyChanged(nameof(PersonCounterTx));
+        }
+
+        #region INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void RaisePropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        #endregion
 
         #endregion
     }
