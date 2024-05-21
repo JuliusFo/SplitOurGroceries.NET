@@ -35,7 +35,7 @@ namespace SplitOurGroceries.Content.Main
 
         #endregion
 
-        public int PersonCounter { get; set; } = 1;
+        public int PersonCounter { get; set; } = 2;
 
         public string PersonCounterTx => string.Format(LabelResources.PersonCount, PersonCounter);
 
