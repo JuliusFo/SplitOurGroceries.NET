@@ -64,6 +64,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\SplitOurGroceries.Common\SplitOurGroceries.Common.csproj" />
+	  <ProjectReference Include="..\SplitOurGroceries.Content\SplitOurGroceries.Content.csproj" />
 	  <ProjectReference Include="..\SplitOurGroceries.Resources\SplitOurGroceries.Resources.csproj" />
 	</ItemGroup>
 

@@ -1,36 +1,20 @@
-﻿using SplitOurGroceries.Resources.Labels;
+﻿using SplitOurGroceries.Common.Extensions;
+using SplitOurGroceries.Content.Main;
 
 namespace SplitOurGroceries
 {
     public partial class MainPage : ContentPage
     {
-        #region Fields
-
-        
-
-        #endregion
-
-        #region Constructor
-
         public MainPage()
         {
             InitializeComponent();
+
+            HandlerChanged += OnHandlerChanged;
         }
 
-        #endregion
-
-        #region Properties
-
-        public int PersonCounter { get; set; } = 1;
-
-        public string PersonCounterTx => string.Format(LabelResources.PersonCount, PersonCounter);
-
-        #endregion
-
-        #region Methods
-
-
-
-        #endregion
+        void OnHandlerChanged(object? sender, EventArgs e)
+        {
+            this.RegisterViewModel<MainViewModel>();
+        }
     }
 }

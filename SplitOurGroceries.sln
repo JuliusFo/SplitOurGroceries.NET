@@ -5,9 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SplitOurGroceries", "SplitOurGroceries\SplitOurGroceries.csproj", "{69442A43-41B8-489D-8029-E6C3FC263730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitOurGroceries.Content", "SplitOurGroceries.Content\SplitOurGroceries.Content.csproj", "{D675B878-D505-4774-919B-0D82BC3FCA26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SplitOurGroceries.Content", "SplitOurGroceries.Content\SplitOurGroceries.Content.csproj", "{D675B878-D505-4774-919B-0D82BC3FCA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitOurGroceries.Resources", "SplitOurGroceries.Resources\SplitOurGroceries.Resources.csproj", "{F209FFB0-AC63-45DD-AAB8-98796DB0B590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SplitOurGroceries.Resources", "SplitOurGroceries.Resources\SplitOurGroceries.Resources.csproj", "{F209FFB0-AC63-45DD-AAB8-98796DB0B590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitOurGroceries.Common", "SplitOurGroceries.Common\SplitOurGroceries.Common.csproj", "{1D2198FA-9342-42DC-BB48-0F87A476EE3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{F209FFB0-AC63-45DD-AAB8-98796DB0B590}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F209FFB0-AC63-45DD-AAB8-98796DB0B590}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F209FFB0-AC63-45DD-AAB8-98796DB0B590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2198FA-9342-42DC-BB48-0F87A476EE3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2198FA-9342-42DC-BB48-0F87A476EE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2198FA-9342-42DC-BB48-0F87A476EE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2198FA-9342-42DC-BB48-0F87A476EE3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
