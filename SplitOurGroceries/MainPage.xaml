@@ -6,11 +6,18 @@
              xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="10,0"
-            Spacing="25">
 
-            <Grid>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Persons -->
+            <Grid Grid.Row="0">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="6*"/>
@@ -22,8 +29,8 @@
 
                 <!-- Person counter tx -->
                 <dxe:TextEdit Grid.Column="0" 
-                              Text="{Binding PersonCounterTx}"
-                              IsReadOnly="True"/>
+                  Text="{Binding PersonCounterTx}"
+                  IsReadOnly="True"/>
 
                 <!-- One less person -->
                 <Button Command="{Binding RemovePersonCommand}"
@@ -35,6 +42,25 @@
                         Grid.Column="4"
                         Text="+"/>
             </Grid>
-        </VerticalStackLayout>
+
+            <!-- Items -->
+            <Grid Grid.Row="2">
+
+            </Grid>
+
+            <!-- Buttom buttons -->
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Split -->
+                <Button Command="{Binding SplitCommand}"
+                        Grid.Column="0"
+                        Text="Split"
+                        HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+        </Grid>
     </ScrollView>
 </ContentPage>
