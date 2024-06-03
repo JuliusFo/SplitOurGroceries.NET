@@ -51,8 +51,11 @@ namespace SplitOurGroceries.Content.Main
 
         private void RemovePerson()
         {
-            PersonCounter--;
-            RaisePropertyChanged(nameof(PersonCounterTx));
+            if(PersonCounter > 1)
+            {
+                PersonCounter--;
+                RaisePropertyChanged(nameof(PersonCounterTx));
+            }
         }
 
         #region INotifyPropertyChanged
@@ -61,10 +64,7 @@ namespace SplitOurGroceries.Content.Main
 
         private void RaisePropertyChanged(string name)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         #endregion
