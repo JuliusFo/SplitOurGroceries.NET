@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SplitOurGroceries.MainPage"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
              xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <ScrollView>
@@ -29,7 +30,7 @@
 
                 <!-- Person counter tx -->
                 <dxe:TextEdit Grid.Column="0" 
-                  Text="{Binding PersonCounterTx}"
+                  Text="{Binding Model.Persons.Count}"
                   IsReadOnly="True"/>
 
                 <!-- One less person -->
@@ -45,6 +46,8 @@
 
             <!-- Items -->
             <Grid Grid.Row="2">
+
+                
 
             </Grid>
 

@@ -12,6 +12,9 @@ namespace SplitOurGroceries
             builder
                 .UseMauiApp<App>()
                 .UseDevExpress()
+                .UseDevExpressEditors()
+                .UseDevExpressCollectionView()
+                .UseDevExpressControls()
                 .RegisterServices()
                 .RegisterViewModels()
                 .RegisterViews()

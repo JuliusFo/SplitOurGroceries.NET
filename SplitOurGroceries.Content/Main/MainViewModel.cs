@@ -1,4 +1,5 @@
-﻿using SplitOurGroceries.Resources.Labels;
+﻿using SplitOurGroceries.Content.Main.Data;
+using SplitOurGroceries.Resources.Labels;
 using System.ComponentModel;
 
 namespace SplitOurGroceries.Content.Main
@@ -15,6 +16,8 @@ namespace SplitOurGroceries.Content.Main
 
         public MainViewModel()
         {
+            Model = new SplitModel();
+
             #region Commands
 
             AddPersonCommand = new Command(AddPerson);
@@ -33,6 +36,8 @@ namespace SplitOurGroceries.Content.Main
 
         public Command RemovePersonCommand { get; }
 
+        public SplitModel Model { get; }
+
         #endregion
 
         public int PersonCounter { get; set; } = 2;
@@ -45,17 +50,14 @@ namespace SplitOurGroceries.Content.Main
 
         private void AddPerson()
         {
-            PersonCounter++;
-            RaisePropertyChanged(nameof(PersonCounterTx));
+            Model.Persons.IncreasePersonCount();
+            RaisePropertyChanged(nameof(Model));
         }
 
         private void RemovePerson()
         {
-            if(PersonCounter > 1)
-            {
-                PersonCounter--;
-                RaisePropertyChanged(nameof(PersonCounterTx));
-            }
+            Model.Persons.DecreasePersonCount();
+            RaisePropertyChanged(nameof(Model));
         }
 
         #region INotifyPropertyChanged
