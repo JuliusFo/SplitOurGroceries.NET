@@ -1,6 +1,6 @@
 ﻿namespace SplitOurGroceries.Content.Main.Data;
 
-internal class SplitItemModel
+public class SplitItemModel
 {
     #region Fields
 
