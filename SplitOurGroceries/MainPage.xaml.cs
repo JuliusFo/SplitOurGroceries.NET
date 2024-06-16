@@ -1,5 +1,5 @@
 ﻿using SplitOurGroceries.Common.Extensions;
-using SplitOurGroceries.Content.Main;
+using SplitOurGroceries.Content.Main.ViewModel;
 
 namespace SplitOurGroceries
 {

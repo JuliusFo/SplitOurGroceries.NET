@@ -1,6 +1,6 @@
 ﻿using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
-using SplitOurGroceries.Content.Main;
+using SplitOurGroceries.Content.Main.ViewModel;
 
 namespace SplitOurGroceries
 {

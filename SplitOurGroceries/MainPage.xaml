@@ -4,66 +4,87 @@
              x:Class="SplitOurGroceries.MainPage"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+             xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
              xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
-    <ScrollView>
+    <!-- Resources -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
 
-        <Grid Padding="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="16"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="16"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            <!-- Shopping items template -->
+            <DataTemplate x:Key="listItemTemplate">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Bisque">
 
-            <!-- Persons -->
-            <Grid Grid.Row="0">
+                    <Label Text="{Binding Name}"></Label>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="8"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="8"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
+                </StackLayout>
+            </DataTemplate>
 
-                <!-- Person counter tx -->
-                <dxe:TextEdit Grid.Column="0" 
-                  Text="{Binding Model.Persons.Count}"
-                  IsReadOnly="True"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-                <!-- One less person -->
-                <Button Command="{Binding RemovePersonCommand}"
-                        Grid.Column="2"
-                        Text="-"/>
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-                <!-- One more person -->
-                <Button Command="{Binding AddPersonCommand}"
-                        Grid.Column="4"
-                        Text="+"/>
-            </Grid>
+        <!-- Persons -->
+        <Grid Grid.Row="0">
 
-            <!-- Items -->
-            <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
-                
+            <!-- Person counter tx -->
+            <dxe:TextEdit Grid.Column="0" 
+          Text="{Binding Model.Persons.Count}"
+          IsReadOnly="True"/>
 
-            </Grid>
+            <!-- One less person -->
+            <Button Command="{Binding RemovePersonCommand}"
+                Grid.Column="2"
+                Text="-"/>
 
-            <!-- Buttom buttons -->
-            <Grid Grid.Row="4">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <!-- One more person -->
+            <Button Command="{Binding AddPersonCommand}"
+                Grid.Column="4"
+                Text="+"/>
+        </Grid>
 
-                <!-- Split -->
-                <Button Command="{Binding SplitCommand}"
-                        Grid.Column="0"
-                        Text="Split"
-                        HorizontalOptions="FillAndExpand"/>
-            </Grid>
+        <!-- Items -->
+        <Grid Grid.Row="2" BackgroundColor="Pink">
+
+            <dxcv:DXCollectionView x:Name="collectionView" 
+                                   BackgroundColor="Aqua"
+                                   AllowGroupCollapse="False"
+                                   ItemTemplate="{StaticResource listItemTemplate}"
+                                   ItemsSource="{Binding Model.Items}">
+
+            </dxcv:DXCollectionView>
 
         </Grid>
-    </ScrollView>
+
+        <!-- Buttom buttons -->
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Split -->
+            <Button Command="{Binding SplitCommand}"
+                Grid.Column="0"
+                Text="Split"
+                HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+    </Grid>
 </ContentPage>

@@ -2,7 +2,7 @@
 using SplitOurGroceries.Resources.Labels;
 using System.ComponentModel;
 
-namespace SplitOurGroceries.Content.Main
+namespace SplitOurGroceries.Content.Main.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
@@ -17,6 +17,7 @@ namespace SplitOurGroceries.Content.Main
         public MainViewModel()
         {
             Model = new SplitModel();
+            Model.Items.Add(new SplitItemModel("Test", 1.23f));
 
             #region Commands
 
