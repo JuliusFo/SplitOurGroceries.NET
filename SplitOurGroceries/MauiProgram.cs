@@ -14,6 +14,7 @@ namespace SplitOurGroceries
                 .UseDevExpress()
                 .UseDevExpressEditors()
                 .UseDevExpressCollectionView()
+                .UseDevExpressDataGrid()
                 .UseDevExpressControls()
                 .RegisterServices()
                 .RegisterViewModels()

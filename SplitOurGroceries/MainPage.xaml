@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SplitOurGroceries.MainPage"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
-             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
              xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
-             xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
              xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <!-- Resources -->
@@ -72,10 +70,10 @@
             </dxcv:DXCollectionView>
 
             <!-- Add new item -->
-            <dx:DXButton VerticalOptions="End" 
+            <Button VerticalOptions="End" 
              
              HorizontalOptions="End" 
-             Content="+"
+             Text="+"
              WidthRequest="56" 
              HeightRequest="56" 
              Padding="0" 
@@ -84,12 +82,8 @@
              FontAttributes="None"
                          Command="{Binding AddNewItemCommand}"
                          BackgroundColor="LightPink">
-                <dx:DXButton.Shadow>
-                    <Shadow Brush="{dx:ThemeColor Shadow, Alpha=0.3}"
-        Offset="1,2"
-        Radius="10" />
-                </dx:DXButton.Shadow>
-            </dx:DXButton>
+
+            </Button>
 
         </Grid>
 
