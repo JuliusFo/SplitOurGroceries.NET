@@ -22,6 +22,7 @@ namespace SplitOurGroceries.Content.Main.ViewModel
             #region Commands
 
             AddPersonCommand = new Command(AddPerson);
+            AddNewItemCommand = new Command(AddNewItem);
             RemovePersonCommand = new Command(RemovePerson);
 
             #endregion
@@ -37,9 +38,11 @@ namespace SplitOurGroceries.Content.Main.ViewModel
 
         public Command RemovePersonCommand { get; }
 
-        public SplitModel Model { get; }
+        public Command AddNewItemCommand { get; }
 
         #endregion
+
+        public SplitModel Model { get; }
 
         public int PersonCounter { get; set; } = 2;
 
@@ -53,6 +56,11 @@ namespace SplitOurGroceries.Content.Main.ViewModel
         {
             Model.Persons.IncreasePersonCount();
             RaisePropertyChanged(nameof(Model));
+        }
+
+        private void AddNewItem()
+        {
+            
         }
 
         private void RemovePerson()

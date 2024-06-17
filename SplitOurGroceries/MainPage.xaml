@@ -71,6 +71,26 @@
 
             </dxcv:DXCollectionView>
 
+            <!-- Add new item -->
+            <dx:DXButton VerticalOptions="End" 
+             
+             HorizontalOptions="End" 
+             Content="+"
+             WidthRequest="56" 
+             HeightRequest="56" 
+             Padding="0" 
+             FontSize="28" 
+             CornerRadius="14" 
+             FontAttributes="None"
+                         Command="{Binding AddNewItemCommand}"
+                         BackgroundColor="LightPink">
+                <dx:DXButton.Shadow>
+                    <Shadow Brush="{dx:ThemeColor Shadow, Alpha=0.3}"
+        Offset="1,2"
+        Radius="10" />
+                </dx:DXButton.Shadow>
+            </dx:DXButton>
+
         </Grid>
 
         <!-- Buttom buttons -->
@@ -85,6 +105,5 @@
                 Text="Split"
                 HorizontalOptions="FillAndExpand"/>
         </Grid>
-
     </Grid>
 </ContentPage>
