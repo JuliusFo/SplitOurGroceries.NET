@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Maui.Views;
+using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Content.ItemAddition.Views;
 using SplitOurGroceries.Content.Main.Data;
 using SplitOurGroceries.Resources.Labels;
-using System.ComponentModel;
 
 namespace SplitOurGroceries.Content.Main.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : BaseViewModel
     {
         #region Fields
 
@@ -62,10 +62,17 @@ namespace SplitOurGroceries.Content.Main.ViewModel
 
         private async void AddNewItem()
         {
-            if(null != Shell.Current.Handler)
+            if (null == Shell.Current.Handler)
             {
-                ItemAdditionView itemAdditionPopup = new(Shell.Current.Handler);
-                await Shell.Current.ShowPopupAsync(itemAdditionPopup);
+                return;
+            }
+
+            ItemAdditionView itemAdditionPopup = new(Shell.Current.Handler);
+            _ = await Shell.Current.ShowPopupAsync(itemAdditionPopup);
+
+            if (null != itemAdditionPopup.Data)
+            {
+
             }
         }
 
@@ -74,17 +81,6 @@ namespace SplitOurGroceries.Content.Main.ViewModel
             Model.Persons.DecreasePersonCount();
             RaisePropertyChanged(nameof(Model));
         }
-
-        #region INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void RaisePropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        #endregion
 
         #endregion
     }
