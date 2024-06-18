@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SplitOurGroceries.Content.ItemAddition.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ public class ItemAdditionViewModel
 
     #region Properties
 
-
+    internal ItemAdditionResult? Data { get; set; }
 
     #endregion
 
