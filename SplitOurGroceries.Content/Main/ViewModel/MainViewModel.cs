@@ -1,4 +1,6 @@
-﻿using SplitOurGroceries.Content.Main.Data;
+﻿using CommunityToolkit.Maui.Views;
+using SplitOurGroceries.Content.ItemAddition.Views;
+using SplitOurGroceries.Content.Main.Data;
 using SplitOurGroceries.Resources.Labels;
 using System.ComponentModel;
 
@@ -58,9 +60,13 @@ namespace SplitOurGroceries.Content.Main.ViewModel
             RaisePropertyChanged(nameof(Model));
         }
 
-        private void AddNewItem()
+        private async void AddNewItem()
         {
-            
+            if(null != Shell.Current.Handler)
+            {
+                ItemAdditionView itemAdditionPopup = new(Shell.Current.Handler);
+                await Shell.Current.ShowPopupAsync(itemAdditionPopup);
+            }
         }
 
         private void RemovePerson()

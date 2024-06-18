@@ -1,5 +1,8 @@
-﻿using DevExpress.Maui;
+﻿using CommunityToolkit.Maui;
+using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
+using SplitOurGroceries.Content.ItemAddition.ViewModels;
+using SplitOurGroceries.Content.ItemAddition.Views;
 using SplitOurGroceries.Content.Main.ViewModel;
 
 namespace SplitOurGroceries
@@ -11,6 +14,7 @@ namespace SplitOurGroceries
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .UseDevExpress()
                 .UseDevExpressEditors()
                 .UseDevExpressCollectionView()
@@ -42,6 +46,7 @@ namespace SplitOurGroceries
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddSingleton<MainViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ItemAdditionViewModel>();
 
             return mauiAppBuilder;
         }
@@ -49,6 +54,7 @@ namespace SplitOurGroceries
         public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddSingleton<MainPage>();
+            mauiAppBuilder.Services.AddSingleton<ItemAdditionView>();
 
             return mauiAppBuilder;
         }
