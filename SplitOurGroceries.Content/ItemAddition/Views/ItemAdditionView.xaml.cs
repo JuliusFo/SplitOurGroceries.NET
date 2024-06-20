@@ -18,6 +18,7 @@ public partial class ItemAdditionView : Popup
     public ItemAdditionView(IElementHandler elementHandler)
     {
         InitializeComponent();
+        baseStackLayout.WidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width-((DeviceDisplay.Current.MainDisplayInfo.Width/100)*10);
 
         viewModel = this.RegisterViewModel<ItemAdditionViewModel>(elementHandler);
         BindingContext = viewModel;

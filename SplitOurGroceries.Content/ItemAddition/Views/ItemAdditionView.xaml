@@ -6,7 +6,8 @@
                xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
 
     <VerticalStackLayout Padding="10"
-                         Spacing="10">
+                         Spacing="10"
+                         x:Name="baseStackLayout">
 
         <!-- Name -->
         <dxe:TextEdit Text="{Binding Model.Name}"/>
@@ -15,7 +16,7 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="8"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="8"/>
