@@ -2,7 +2,6 @@
 using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Common.Models;
 using SplitOurGroceries.Content.ItemAddition.Views;
-using SplitOurGroceries.Resources.Labels;
 
 namespace SplitOurGroceries.Content.Main.ViewModel
 {
@@ -45,10 +44,6 @@ namespace SplitOurGroceries.Content.Main.ViewModel
         #endregion
 
         public SplitModel Model { get; }
-
-        public int PersonCounter { get; set; } = 2;
-
-        public string PersonCounterTx => string.Format(LabelResources.PersonCount, PersonCounter);
 
         #endregion
 
