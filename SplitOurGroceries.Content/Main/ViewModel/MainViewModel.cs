@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui.Views;
 using SplitOurGroceries.Common.BaseModels;
+using SplitOurGroceries.Common.Models;
 using SplitOurGroceries.Content.ItemAddition.Views;
-using SplitOurGroceries.Content.Main.Data;
 using SplitOurGroceries.Resources.Labels;
 
 namespace SplitOurGroceries.Content.Main.ViewModel

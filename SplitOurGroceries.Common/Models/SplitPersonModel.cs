@@ -1,4 +1,4 @@
-﻿namespace SplitOurGroceries.Content.Main.Data;
+﻿namespace SplitOurGroceries.Common.Models;
 
 public class SplitPersonModel
 {

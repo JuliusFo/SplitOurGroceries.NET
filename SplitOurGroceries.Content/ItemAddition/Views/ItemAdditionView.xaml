@@ -2,21 +2,64 @@
 <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                x:Class="SplitOurGroceries.Content.ItemAddition.Views.ItemAdditionView"
-               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
 
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10"
+                         Spacing="10">
 
-        <!-- Title -->
-        <Label Text="Test"
-           HorizontalTextAlignment="Center"
-           VerticalTextAlignment="Center"
-           FontSize="25"/>
+        <!-- Name -->
+        <dxe:TextEdit Text="{Binding Model.Name}"/>
 
-        <!-- Data -->
+        <!-- Quantity -->
+        <Grid>
 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-        <!-- Confirm -->
-        <Button Text="Test-Button"
-            WidthRequest="300"/>
+            <!-- Price -->
+            <dxe:TextEdit Text="{Binding Model.Price}"
+                          Grid.Column="0"/>
+            
+            <!-- Decrease count -->
+            <Button Text="-"
+                    Grid.Column="2"
+                    Command="{Binding DecreaseQuantityCommand}"/>
+
+            <!-- Increase count -->
+            <Button Text="+"
+                    Grid.Column="4"
+                    Command="{Binding IncreaseQuantityCommand}"/>
+        </Grid>
+        
+        <!-- Scan barcode -->
+        <Button Text="Barcode"
+                Command="{Binding ScanBarcodeCommand}"/>
+        
+        <!-- Bottom buttons -->
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Cancel -->
+            <Button Text="X"
+                    Grid.Column="0"
+                    Command="{Binding CancelCommand}"/>
+
+            <!-- Confirm -->
+            <Button Text="C"
+                    Grid.Column="2"
+                    Command="{Binding ConfirmCommand}"/>
+
+        </Grid>
     </VerticalStackLayout>
 </toolkit:Popup>
