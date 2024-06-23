@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\barcode_scan_custom.png" />
 	  <None Remove="Resources\Images\check_custom.png" />
 	  <None Remove="Resources\Images\close_custom.png" />
+	  <None Remove="Resources\Images\eur.png" />
 	</ItemGroup>
 
 	<ItemGroup>

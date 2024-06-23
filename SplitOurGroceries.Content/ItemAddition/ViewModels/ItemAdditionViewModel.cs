@@ -1,10 +1,5 @@
 ﻿using SplitOurGroceries.Common.Models;
 using SplitOurGroceries.Content.ItemAddition.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SplitOurGroceries.Content.ItemAddition.ViewModels;
 
@@ -20,7 +15,7 @@ public class ItemAdditionViewModel
 
     public ItemAdditionViewModel()
     {
-        Model = new SplitItemModel(string.Empty, 0f);
+        Model = new SplitItemModel();
 
         #region Commands
 
@@ -42,7 +37,7 @@ public class ItemAdditionViewModel
     public Command DecreaseQuantityCommand { get; }
 
     public Command IncreaseQuantityCommand { get; }
-    
+
     public Command ScanBarcodeCommand { get; }
 
     public Command CancelCommand { get; }

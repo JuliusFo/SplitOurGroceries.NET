@@ -14,7 +14,7 @@
         <dxe:TextEdit Text="{Binding Model.Name}"
                       LabelText="{x:Static shreslabels:LabelResources.Name}"/>
 
-        <!-- Quantity -->
+        <!-- Details -->
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -30,7 +30,8 @@
             <!-- Price -->
             <dxe:TextEdit Text="{Binding Model.Price}"
                           Grid.Column="0"
-                          LabelText="{x:Static shreslabels:LabelResources.Price}"/>
+                          LabelText="{x:Static shreslabels:LabelResources.Price}"
+                          EndIcon="eur.png"/>
 
             <!-- Quantity -->
             <dxe:TextEdit Text="{Binding Model.Quantity}"
