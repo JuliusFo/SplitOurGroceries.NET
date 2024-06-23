@@ -16,7 +16,9 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="8"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="8"/>
@@ -26,15 +28,19 @@
             <!-- Price -->
             <dxe:TextEdit Text="{Binding Model.Price}"
                           Grid.Column="0"/>
-            
+
+            <!-- Price -->
+            <dxe:TextEdit Text="{Binding Model.Quantity}"
+              Grid.Column="2"/>
+
             <!-- Decrease count -->
             <Button Text="-"
-                    Grid.Column="2"
+                    Grid.Column="4"
                     Command="{Binding DecreaseQuantityCommand}"/>
 
             <!-- Increase count -->
             <Button Text="+"
-                    Grid.Column="4"
+                    Grid.Column="6"
                     Command="{Binding IncreaseQuantityCommand}"/>
         </Grid>
         
