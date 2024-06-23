@@ -3,14 +3,16 @@
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                x:Class="SplitOurGroceries.Content.ItemAddition.Views.ItemAdditionView"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-               xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
+               xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+               xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <VerticalStackLayout Padding="10"
                          Spacing="10"
                          x:Name="baseStackLayout">
 
         <!-- Name -->
-        <dxe:TextEdit Text="{Binding Model.Name}"/>
+        <dxe:TextEdit Text="{Binding Model.Name}"
+                      LabelText="{x:Static shreslabels:LabelResources.Name}"/>
 
         <!-- Quantity -->
         <Grid>
@@ -27,11 +29,13 @@
 
             <!-- Price -->
             <dxe:TextEdit Text="{Binding Model.Price}"
-                          Grid.Column="0"/>
+                          Grid.Column="0"
+                          LabelText="{x:Static shreslabels:LabelResources.Price}"/>
 
-            <!-- Price -->
+            <!-- Quantity -->
             <dxe:TextEdit Text="{Binding Model.Quantity}"
-              Grid.Column="2"/>
+                          Grid.Column="2"
+                          LabelText="{x:Static shreslabels:LabelResources.Quantity}"/>
 
             <!-- Decrease count -->
             <Button Text="-"
