@@ -20,33 +20,26 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="8"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Price -->
             <dxe:TextEdit Text="{Binding Model.Price}"
                           Grid.Column="0"
                           LabelText="{x:Static shreslabels:LabelResources.Price}"
-                          EndIcon="eur.png"/>
+                          EndIcon="eur.png"
+                          ClearIconVisibility="Never"
+                          Keyboard="Numeric"/>
 
             <!-- Quantity -->
-            <dxe:TextEdit Text="{Binding Model.Quantity}"
-                          Grid.Column="2"
-                          LabelText="{x:Static shreslabels:LabelResources.Quantity}"/>
-
-            <!-- Decrease count -->
-            <Button Text="-"
-                    Grid.Column="4"
-                    Command="{Binding DecreaseQuantityCommand}"/>
-
-            <!-- Increase count -->
-            <Button Text="+"
-                    Grid.Column="6"
-                    Command="{Binding IncreaseQuantityCommand}"/>
+            <dxe:NumericEdit Value = "{Binding Model.Quantity}"
+                             Grid.Column="2"
+                             LabelText="{x:Static shreslabels:LabelResources.Quantity}"
+                             UpIcon="arrow_up"
+                             IsUpDownIconVisible="True"
+                             DownIcon="arrow_down"
+                             MinValue="1"
+                             AllowLooping="False"/>
         </Grid>
         
         <!-- Scan barcode -->

@@ -19,8 +19,6 @@ public class ItemAdditionViewModel
 
         #region Commands
 
-        DecreaseQuantityCommand = new Command(DecreaseQuantity);
-        IncreaseQuantityCommand = new Command(IncreaseQuantity);
         ScanBarcodeCommand = new Command(ScanBarcode);
         CancelCommand = new Command(Cancel);
         ConfirmCommand = new Command(Confirm);
@@ -33,10 +31,6 @@ public class ItemAdditionViewModel
     #region Properties
 
     #region Commands
-
-    public Command DecreaseQuantityCommand { get; }
-
-    public Command IncreaseQuantityCommand { get; }
 
     public Command ScanBarcodeCommand { get; }
 
@@ -55,16 +49,6 @@ public class ItemAdditionViewModel
     #region Methods
 
     #region Data manipulation
-
-    private void DecreaseQuantity()
-    {
-
-    }
-
-    private void IncreaseQuantity()
-    {
-
-    }
 
     private void ScanBarcode()
     {

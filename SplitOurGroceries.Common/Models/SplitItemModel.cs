@@ -14,11 +14,12 @@ public class SplitItemModel
     {
         Name = name;
         Price = price;
+        Quantity = 1;
     }
 
     public SplitItemModel()
     {
-
+        Quantity = 1;
     }
 
     #endregion
@@ -28,6 +29,8 @@ public class SplitItemModel
     public string? Name { get; private set; }
 
     public float? Price { get; private set; }
+
+    public int Quantity { get; set; }
 
     #endregion
 
