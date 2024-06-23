@@ -61,7 +61,7 @@ namespace SplitOurGroceries.Resources.Labels {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Name/Description.
         /// </summary>
         public static string Name {
             get {

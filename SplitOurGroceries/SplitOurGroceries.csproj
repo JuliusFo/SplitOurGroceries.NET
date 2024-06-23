@@ -57,6 +57,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\barcode_scan_custom.png" />
+	  <None Remove="Resources\Images\check_custom.png" />
+	  <None Remove="Resources\Images\close_custom.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="DevExpress.Maui.DataGrid" Version="24.1.3" />
 		<PackageReference Include="DevExpress.Maui.Editors" Version="24.1.3" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />

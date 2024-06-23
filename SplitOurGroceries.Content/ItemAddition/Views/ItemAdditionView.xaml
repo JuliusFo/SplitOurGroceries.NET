@@ -49,8 +49,8 @@
         </Grid>
         
         <!-- Scan barcode -->
-        <Button Text="Barcode"
-                Command="{Binding ScanBarcodeCommand}"/>
+        <Button Command="{Binding ScanBarcodeCommand}"
+                ImageSource="barcode_scan_custom.png"/>
         
         <!-- Bottom buttons -->
         <Grid>
@@ -62,12 +62,12 @@
             </Grid.ColumnDefinitions>
             
             <!-- Cancel -->
-            <Button Text="X"
+            <Button ImageSource="close_custom.png"
                     Grid.Column="0"
                     Command="{Binding CancelCommand}"/>
 
             <!-- Confirm -->
-            <Button Text="C"
+            <Button ImageSource="check_custom.png"
                     Grid.Column="2"
                     Command="{Binding ConfirmCommand}"/>
 
