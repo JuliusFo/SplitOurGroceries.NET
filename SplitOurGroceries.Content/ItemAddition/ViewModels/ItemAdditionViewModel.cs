@@ -1,5 +1,6 @@
 ﻿using SplitOurGroceries.Common.Models;
 using SplitOurGroceries.Content.ItemAddition.Data;
+using SplitOurGroceries.Content.ItemAddition.Services;
 
 namespace SplitOurGroceries.Content.ItemAddition.ViewModels;
 
@@ -7,15 +8,17 @@ public class ItemAdditionViewModel
 {
     #region Fields
 
-
+    private readonly ItemAdditionWebService webService;
 
     #endregion
 
     #region Constructor
 
-    public ItemAdditionViewModel()
+    public ItemAdditionViewModel(ItemAdditionWebService webService)
     {
         Model = new SplitItemModel();
+
+        this.webService = webService;
 
         #region Commands
 

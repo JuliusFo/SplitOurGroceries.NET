@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
+using SplitOurGroceries.Content.ItemAddition.Services;
 using SplitOurGroceries.Content.ItemAddition.ViewModels;
 using SplitOurGroceries.Content.ItemAddition.Views;
 using SplitOurGroceries.Content.Main.ViewModel;
@@ -39,7 +40,7 @@ namespace SplitOurGroceries
         public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
         {
             // More services registered here.
-
+            mauiAppBuilder.Services.AddSingleton<ItemAdditionWebService>();
             return mauiAppBuilder;
         }
 

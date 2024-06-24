@@ -31,10 +31,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ItemAddition\Services\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="ItemAddition\Views\ItemAdditionView.xaml">
 	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 	  </MauiXaml>
