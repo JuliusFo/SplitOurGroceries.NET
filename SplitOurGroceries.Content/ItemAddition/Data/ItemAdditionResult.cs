@@ -1,20 +1,21 @@
-﻿namespace SplitOurGroceries.Content.ItemAddition.Data;
+﻿using SplitOurGroceries.Common.Models;
+
+namespace SplitOurGroceries.Content.ItemAddition.Data;
 
 public class ItemAdditionResult
 {
     #region Constructor
 
-    public ItemAdditionResult(string name)
+    public ItemAdditionResult(SplitItemModel data)
     {
-        Name = name;
-
+        Data = data;
     }
 
     #endregion
 
     #region Properties
 
-    public string Name { get; }
+    public SplitItemModel Data { get; }
 
     #endregion
 }

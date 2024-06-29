@@ -9,6 +9,7 @@ public class ItemAdditionViewModel
     #region Fields
 
     private readonly ItemAdditionWebService webService;
+    private Action<object?>? closeAction;
 
     #endregion
 
@@ -64,12 +65,23 @@ public class ItemAdditionViewModel
 
     private void Cancel()
     {
-
+        Data = null;
+        closeAction?.Invoke(null);
     }
 
     private void Confirm()
     {
+        Data = new ItemAdditionResult(Model);
+        closeAction?.Invoke(null);
+    }
 
+    #endregion
+
+    #region Helper
+
+    public void SetCloseAction(Action<object?> closeAction)
+    {
+        this.closeAction = closeAction;
     }
 
     #endregion
