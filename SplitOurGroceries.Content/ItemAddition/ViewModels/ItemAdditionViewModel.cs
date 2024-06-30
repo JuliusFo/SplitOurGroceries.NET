@@ -1,10 +1,10 @@
-﻿using SplitOurGroceries.Common.Models;
+﻿using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Content.ItemAddition.Data;
 using SplitOurGroceries.Content.ItemAddition.Services;
 
 namespace SplitOurGroceries.Content.ItemAddition.ViewModels;
 
-public class ItemAdditionViewModel
+public class ItemAdditionViewModel : BaseViewModel
 {
     #region Fields
 
@@ -17,7 +17,7 @@ public class ItemAdditionViewModel
 
     public ItemAdditionViewModel(ItemAdditionWebService webService)
     {
-        Model = new SplitItemModel();
+        Model = new ItemAdditionModel(string.Empty, 0);
 
         this.webService = webService;
 
@@ -44,9 +44,13 @@ public class ItemAdditionViewModel
 
     #endregion
 
+    #region XAML
+
     internal ItemAdditionResult? Data { get; set; }
 
-    public SplitItemModel Model { get; set; }
+    public ItemAdditionModel Model { get; set; }
+
+    #endregion
 
     #endregion
 
@@ -71,7 +75,17 @@ public class ItemAdditionViewModel
 
     private void Confirm()
     {
-        Data = new ItemAdditionResult(Model);
+        if (string.IsNullOrEmpty(Model.Name))
+        {
+            Model.NameHasError = true;
+            Model.NameErrorText = "Bitte geben Sie einen Namen ein!";
+
+            RaisePropertyChanged(nameof(Model));
+
+            return;
+        }
+
+        Data = new ItemAdditionResult(Model.ToItemModel());
         closeAction?.Invoke(null);
     }
 

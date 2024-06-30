@@ -1,46 +1,14 @@
 ﻿namespace SplitOurGroceries.Common.Models;
 
-public class SplitItemModel
+public class SplitItemModel(string name, float price, int? quantity)
 {
-    #region Fields
-
-
-
-    #endregion
-
-    #region Constructor
-
-    public SplitItemModel(string name, float price)
-    {
-        Name = name;
-        Price = price;
-        Quantity = 1;
-    }
-
-    public SplitItemModel()
-    {
-        Quantity = 1;
-    }
-
-    #endregion
-
     #region Properties
 
-    public string? Name { get; private set; }
+    public string Name { get; set; } = name;
 
-    public float? Price { get; private set; }
+    public float Price { get; set; } = price;
 
-    public int Quantity { get; set; }
-
-    #endregion
-
-    #region Methods
-
-    public void SetNewData(string name, float price)
-    {
-        Name = name;
-        Price = price;
-    }
+    public int Quantity { get; set; } = quantity ?? 1;
 
     #endregion
 }

@@ -12,7 +12,9 @@
 
         <!-- Name -->
         <dxe:TextEdit Text="{Binding Model.Name}"
-                      LabelText="{x:Static shreslabels:LabelResources.Name}"/>
+                      LabelText="{x:Static shreslabels:LabelResources.Name}"
+                      ErrorText="{Binding Model.NameErrorText}"
+                      HasError="{Binding Model.NameHasError}"/>
 
         <!-- Details -->
         <Grid>
@@ -24,12 +26,12 @@
             </Grid.ColumnDefinitions>
 
             <!-- Price -->
-            <dxe:TextEdit Text="{Binding Model.Price}"
+            <dxe:NumericEdit Value="{Binding Model.Price}"
                           Grid.Column="0"
                           LabelText="{x:Static shreslabels:LabelResources.Price}"
                           EndIcon="eur.png"
                           ClearIconVisibility="Never"
-                          Keyboard="Numeric"/>
+                             DisplayFormat="n2"/>
 
             <!-- Quantity -->
             <dxe:NumericEdit Value = "{Binding Model.Quantity}"

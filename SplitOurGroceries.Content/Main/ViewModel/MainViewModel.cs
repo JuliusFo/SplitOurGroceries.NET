@@ -18,7 +18,7 @@ namespace SplitOurGroceries.Content.Main.ViewModel
         public MainViewModel()
         {
             Model = new SplitModel();
-            Model.Items.Add(new SplitItemModel("Test", 1.23f));
+            Model.Items.Add(new SplitItemModel("Test", 1.23f, 1));
 
             #region Commands
 
