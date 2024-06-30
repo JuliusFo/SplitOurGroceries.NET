@@ -23,6 +23,7 @@
 		<PackageReference Include="DevExpress.Maui.Editors" Version="24.1.3" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
+		<PackageReference Include="TesseractOcrMaui" Version="1.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
