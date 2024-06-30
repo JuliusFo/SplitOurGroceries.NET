@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\arrow_down.png" />
 	  <None Remove="Resources\Images\arrow_up.png" />
 	  <None Remove="Resources\Images\barcode_scan_custom.png" />
+	  <None Remove="Resources\Images\camera.png" />
 	  <None Remove="Resources\Images\check_custom.png" />
 	  <None Remove="Resources\Images\close_custom.png" />
 	  <None Remove="Resources\Images\eur.png" />

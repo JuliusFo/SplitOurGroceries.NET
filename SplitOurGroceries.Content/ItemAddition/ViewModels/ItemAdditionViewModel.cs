@@ -23,7 +23,7 @@ public class ItemAdditionViewModel
 
         #region Commands
 
-        ScanBarcodeCommand = new Command(ScanBarcode);
+        ScanCommand = new Command(Scan);
         CancelCommand = new Command(Cancel);
         ConfirmCommand = new Command(Confirm);
 
@@ -36,7 +36,7 @@ public class ItemAdditionViewModel
 
     #region Commands
 
-    public Command ScanBarcodeCommand { get; }
+    public Command ScanCommand { get; }
 
     public Command CancelCommand { get; }
 
@@ -54,7 +54,7 @@ public class ItemAdditionViewModel
 
     #region Data manipulation
 
-    private void ScanBarcode()
+    private void Scan()
     {
 
     }

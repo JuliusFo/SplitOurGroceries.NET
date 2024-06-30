@@ -43,8 +43,8 @@
         </Grid>
         
         <!-- Scan barcode -->
-        <Button Command="{Binding ScanBarcodeCommand}"
-                ImageSource="barcode_scan_custom.png"/>
+        <Button Command="{Binding ScanCommand}"
+                ImageSource="camera.png"/>
         
         <!-- Bottom buttons -->
         <Grid>
