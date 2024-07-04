@@ -7,8 +7,8 @@ SplitOurGroceries is an application that you can use to split your groceries in 
 ## Supported platforms
 Currently support all the systems that the .NET MAUI does support.
 
-|Platform        |Minimal version|
-|----------------|
-|Windows|
-|Android|
-|iOS          |
+| Platform | Minimum version |
+|----------|-----------------|
+| Windows  | 10              |
+| Android  | 5.1             |
+| iOS      | 9               |
