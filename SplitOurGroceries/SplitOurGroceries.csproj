@@ -64,6 +64,7 @@
 	  <None Remove="Resources\Images\check_custom.png" />
 	  <None Remove="Resources\Images\close_custom.png" />
 	  <None Remove="Resources\Images\eur.png" />
+	  <None Remove="Resources\Raw\deu.traineddata" />
 	</ItemGroup>
 
 	<ItemGroup>

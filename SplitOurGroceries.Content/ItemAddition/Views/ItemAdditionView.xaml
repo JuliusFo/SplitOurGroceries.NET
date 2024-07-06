@@ -44,7 +44,7 @@
                              AllowLooping="False"/>
         </Grid>
         
-        <!-- Scan barcode -->
+        <!-- Scan -->
         <Button Command="{Binding ScanCommand}"
                 ImageSource="camera.png"/>
         
