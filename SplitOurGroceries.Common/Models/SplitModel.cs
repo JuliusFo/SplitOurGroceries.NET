@@ -1,4 +1,6 @@
-﻿namespace SplitOurGroceries.Common.Models;
+﻿using System.Collections.ObjectModel;
+
+namespace SplitOurGroceries.Common.Models;
 
 public class SplitModel
 {
@@ -13,7 +15,7 @@ public class SplitModel
     public SplitModel()
     {
         Persons = new SplitPersonModel();
-        Items = new List<SplitItemModel>();
+        Items = new ObservableCollection<SplitItemModel>();
     }
 
     #endregion
@@ -22,7 +24,7 @@ public class SplitModel
 
     public SplitPersonModel Persons { get; }
 
-    public ICollection<SplitItemModel> Items { get; }
+    public ObservableCollection<SplitItemModel> Items { get; }
 
     #endregion
 

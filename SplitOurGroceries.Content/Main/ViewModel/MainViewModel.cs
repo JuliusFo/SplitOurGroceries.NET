@@ -67,7 +67,7 @@ namespace SplitOurGroceries.Content.Main.ViewModel
 
             if (null != itemAdditionPopup.Data)
             {
-
+                Model.Items.Add(itemAdditionPopup.Data.Data);
             }
         }
 
