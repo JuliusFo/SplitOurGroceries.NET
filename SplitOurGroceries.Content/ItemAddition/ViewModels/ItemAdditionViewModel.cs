@@ -8,18 +8,15 @@ public class ItemAdditionViewModel : BaseViewModel
 {
     #region Fields
 
-    private readonly ItemAdditionWebService webService;
     private Action<object?>? closeAction;
 
     #endregion
 
     #region Constructor
 
-    public ItemAdditionViewModel(ItemAdditionWebService webService)
+    public ItemAdditionViewModel()
     {
         Model = new ItemAdditionModel(string.Empty, 0);
-
-        this.webService = webService;
 
         #region Commands
 

@@ -20,7 +20,7 @@ public partial class ItemAdditionView : Popup
         InitializeComponent();
         baseStackLayout.WidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width-((DeviceDisplay.Current.MainDisplayInfo.Width/100)*10);
 
-        viewModel = this.RegisterViewModel<ItemAdditionViewModel>(elementHandler);
+        viewModel = new ItemAdditionViewModel();
         viewModel.SetCloseAction(Close);
         BindingContext = viewModel;
     }
@@ -30,6 +30,12 @@ public partial class ItemAdditionView : Popup
     #region Properties
 
     public ItemAdditionResult? Data => viewModel.Data;
+
+    #endregion
+
+    #region Methods
+
+
 
     #endregion
 }
