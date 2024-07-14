@@ -32,6 +32,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Update="Buttons\ButtonResources.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>ButtonResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	  <EmbeddedResource Update="Labels\LabelResources.de.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>

@@ -4,7 +4,8 @@
              x:Class="SplitOurGroceries.MainPage"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
-             xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
+             xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources"
+             xmlns:shresbuttons="clr-namespace:SplitOurGroceries.Resources.Buttons;assembly=SplitOurGroceries.Resources">
 
     <!-- Resources -->
     <ContentPage.Resources>
@@ -96,7 +97,7 @@
             <!-- Split -->
             <Button Command="{Binding SplitCommand}"
                 Grid.Column="0"
-                Text="Split"
+                Text="{x:Static shresbuttons:ButtonResources.Split}"
                 HorizontalOptions="FillAndExpand"/>
         </Grid>
     </Grid>
