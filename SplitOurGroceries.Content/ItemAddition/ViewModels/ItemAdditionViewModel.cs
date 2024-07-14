@@ -55,9 +55,19 @@ public class ItemAdditionViewModel : BaseViewModel
 
     #region Data manipulation
 
-    private void Scan()
+    private async void Scan()
     {
+        if (!MediaPicker.IsCaptureSupported)
+        {
+            return;
+        }
 
+        FileResult? photo = await MediaPicker.Default.CapturePhotoAsync();
+
+        if(photo == null)
+        {
+            return;
+        }
     }
 
     #endregion

@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui.Views;
-using SplitOurGroceries.Content.Extensions;
 using SplitOurGroceries.Content.ItemAddition.Data;
 using SplitOurGroceries.Content.ItemAddition.ViewModels;
 
@@ -18,7 +17,7 @@ public partial class ItemAdditionView : Popup
     public ItemAdditionView(IElementHandler elementHandler)
     {
         InitializeComponent();
-        baseStackLayout.WidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width-((DeviceDisplay.Current.MainDisplayInfo.Width/100)*10);
+        baseStackLayout.WidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width - ((DeviceDisplay.Current.MainDisplayInfo.Width / 100) * 10);
 
         viewModel = new ItemAdditionViewModel();
         viewModel.SetCloseAction(Close);
@@ -30,12 +29,6 @@ public partial class ItemAdditionView : Popup
     #region Properties
 
     public ItemAdditionResult? Data => viewModel.Data;
-
-    #endregion
-
-    #region Methods
-
-
 
     #endregion
 }
