@@ -1,6 +1,9 @@
-﻿using SplitOurGroceries.Common.BaseModels;
+﻿using Microsoft.Maui.Controls;
+using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Content.ItemAddition.Data;
 using SplitOurGroceries.Content.ItemAddition.Services;
+using TesseractOcrMaui;
+using TesseractOcrMaui.Results;
 
 namespace SplitOurGroceries.Content.ItemAddition.ViewModels;
 
@@ -9,6 +12,7 @@ public class ItemAdditionViewModel : BaseViewModel
     #region Fields
 
     private Action<object?>? closeAction;
+    private readonly ITesseract? tesseract;
 
     #endregion
 
@@ -17,6 +21,8 @@ public class ItemAdditionViewModel : BaseViewModel
     public ItemAdditionViewModel()
     {
         Model = new ItemAdditionModel(string.Empty, 0);
+
+        tesseract = Shell.Current.Handler?.MauiContext?.Services.GetService<ITesseract>();
 
         #region Commands
 
@@ -64,10 +70,25 @@ public class ItemAdditionViewModel : BaseViewModel
 
         FileResult? photo = await MediaPicker.Default.CapturePhotoAsync();
 
-        if(photo == null)
+        if(null == photo)
         {
             return;
         }
+
+        if(null == tesseract)
+        {
+            return;
+        }
+
+        RecognizionResult result = await tesseract.RecognizeTextAsync(photo.FullPath);
+
+        if (result.NotSuccess())
+        {
+            
+            return;
+        }
+
+        Model.Name = result.RecognisedText;
     }
 
     #endregion
