@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
+using Plugin.Maui.OCR;
 using SplitOurGroceries.Content.ItemAddition.Services;
 using SplitOurGroceries.Content.ItemAddition.ViewModels;
 using SplitOurGroceries.Content.ItemAddition.Views;
@@ -22,6 +23,7 @@ namespace SplitOurGroceries
                 .UseDevExpressCollectionView()
                 .UseDevExpressDataGrid()
                 .UseDevExpressControls()
+                .UseOcr()
                 .RegisterServices()
                 .RegisterViewModels()
                 .RegisterViews()

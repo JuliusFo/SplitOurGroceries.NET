@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls;
+using Plugin.Maui.OCR;
 using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Content.ItemAddition.Data;
 using SplitOurGroceries.Content.ItemAddition.Services;
@@ -13,6 +14,7 @@ public class ItemAdditionViewModel : BaseViewModel
 
     private Action<object?>? closeAction;
     private readonly ITesseract? tesseract;
+    private readonly IOcrService? ocrService;
 
     #endregion
 
@@ -23,6 +25,7 @@ public class ItemAdditionViewModel : BaseViewModel
         Model = new ItemAdditionModel(string.Empty, 0);
 
         tesseract = Shell.Current.Handler?.MauiContext?.Services.GetService<ITesseract>();
+        ocrService = Shell.Current.Handler?.MauiContext?.Services.GetService<IOcrService>();
 
         #region Commands
 
@@ -75,20 +78,31 @@ public class ItemAdditionViewModel : BaseViewModel
             return;
         }
 
-        if(null == tesseract)
+        if(null == ocrService)
         {
             return;
         }
 
-        RecognizionResult result = await tesseract.RecognizeTextAsync(photo.FullPath);
+        // Open a stream to the photo
+        using var sourceStream = await photo.OpenReadAsync();
 
-        if (result.NotSuccess())
-        {
+        // Create a byte array to hold the image data
+        var imageData = new byte[sourceStream.Length];
+
+        // Read the stream into the byte array
+        await sourceStream.ReadAsync(imageData);
+
+        var a = await ocrService.RecognizeTextAsync(imageData);
+
+        //RecognizionResult result = await tesseract.RecognizeTextAsync(photo.FullPath);
+
+        //if (result.NotSuccess())
+        //{
             
-            return;
-        }
+        //    return;
+        //}
 
-        Model.Name = result.RecognisedText;
+        //Model.Name = result.RecognisedText;
     }
 
     #endregion
