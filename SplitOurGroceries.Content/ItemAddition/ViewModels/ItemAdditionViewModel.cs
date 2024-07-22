@@ -78,15 +78,19 @@ public class ItemAdditionViewModel : BaseViewModel
         }
 
         // Open a stream to the photo
-        using var sourceStream = await photo.OpenReadAsync();
+        await using var sourceStream = await photo.OpenReadAsync();
 
         // Create a byte array to hold the image data
         var imageData = new byte[sourceStream.Length];
 
         // Read the stream into the byte array
-        await sourceStream.ReadAsync(imageData);
+        _ = await sourceStream.ReadAsync(imageData);
 
-        var a = await ocrService.RecognizeTextAsync(imageData);
+        OcrResult textResult = await ocrService.RecognizeTextAsync(imageData);
+        if (textResult.Success)
+        {
+            Model.Name = textResult.AllText;
+        }
     }
 
     #endregion
