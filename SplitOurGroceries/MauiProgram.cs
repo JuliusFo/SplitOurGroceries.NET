@@ -6,7 +6,6 @@ using SplitOurGroceries.Content.ItemAddition.Services;
 using SplitOurGroceries.Content.ItemAddition.ViewModels;
 using SplitOurGroceries.Content.ItemAddition.Views;
 using SplitOurGroceries.Content.Main.ViewModel;
-using TesseractOcrMaui;
 
 namespace SplitOurGroceries
 {
@@ -34,7 +33,7 @@ namespace SplitOurGroceries
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
@@ -44,14 +43,6 @@ namespace SplitOurGroceries
         {
             // More services registered here.
             mauiAppBuilder.Services.AddSingleton<ItemAdditionWebService>();
-
-            // Inject library functionality
-            mauiAppBuilder.Services.AddTesseractOcr(
-                files =>
-                {
-                    // must have matching files in Resources/Raw folder
-                    files.AddFile("deu.traineddata");
-                });
 
             return mauiAppBuilder;
         }
