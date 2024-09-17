@@ -4,6 +4,7 @@
                x:Class="SplitOurGroceries.Content.ItemAddition.Views.ItemAdditionView"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+               xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
                xmlns:shreslabels="clr-namespace:SplitOurGroceries.Resources.Labels;assembly=SplitOurGroceries.Resources">
 
     <VerticalStackLayout Padding="10"
@@ -15,6 +16,13 @@
                       LabelText="{x:Static shreslabels:LabelResources.Name}"
                       ErrorText="{Binding Model.NameErrorText}"
                       HasError="{Binding Model.NameHasError}"/>
+
+        <dxg:DataGridView ItemsSource="{Binding SelectableOcrItems}">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Name"/>
+                <!-- Other columns -->
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
 
         <!-- Details -->
         <Grid>

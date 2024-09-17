@@ -1,4 +1,5 @@
-﻿using Plugin.Maui.OCR;
+﻿using System.Collections.ObjectModel;
+using Plugin.Maui.OCR;
 using SplitOurGroceries.Common.BaseModels;
 using SplitOurGroceries.Content.ItemAddition.Data;
 
@@ -20,6 +21,9 @@ public class ItemAdditionViewModel : BaseViewModel
         Model = new ItemAdditionModel(string.Empty, 0);
 
         ocrService = Shell.Current.Handler?.MauiContext?.Services.GetService<IOcrService>();
+
+        SelectableOcrNames = [new OcrNameElement("Test")];
+        SelectableOcrPrices = [];
 
         #region Commands
 
@@ -49,6 +53,10 @@ public class ItemAdditionViewModel : BaseViewModel
     internal ItemAdditionResult? Data { get; set; }
 
     public ItemAdditionModel Model { get; set; }
+
+    public ObservableCollection<OcrNameElement> SelectableOcrNames { get; }
+
+    public ObservableCollection<string> SelectableOcrPrices { get; }
 
     #endregion
 
