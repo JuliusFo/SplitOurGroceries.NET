@@ -99,6 +99,11 @@ public class ItemAdditionViewModel : BaseViewModel
         if (textResult.Success)
         {
             Model.Name = textResult.AllText;
+
+            foreach (OcrResult.OcrElement ocrElement in textResult.Elements.Where(e => e.Confidence > 0.8f && !CouldBePrice(e.Text)))
+            {
+                SelectableOcrNames.Add(new OcrNameElement(ocrElement.Text));
+            }
         }
     }
 
@@ -135,6 +140,16 @@ public class ItemAdditionViewModel : BaseViewModel
     public void SetCloseAction(Action<object?> closeAction)
     {
         this.closeAction = closeAction;
+    }
+
+    private static bool CouldBePrice(string tx)
+    {
+        if (tx.Contains('.') || tx.Contains(','))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     #endregion
