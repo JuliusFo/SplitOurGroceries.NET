@@ -23,6 +23,7 @@ public class ItemAdditionViewModel : BaseViewModel
         ocrService = Shell.Current.Handler?.MauiContext?.Services.GetService<IOcrService>();
 
         SelectableOcrNames = [new OcrNameElement("Test")];
+        RaisePropertyChanged(nameof(SelectableOcrNames));
         SelectableOcrPrices = [];
 
         #region Commands

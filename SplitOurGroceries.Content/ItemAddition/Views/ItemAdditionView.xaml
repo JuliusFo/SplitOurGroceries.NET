@@ -17,9 +17,26 @@
                       ErrorText="{Binding Model.NameErrorText}"
                       HasError="{Binding Model.NameHasError}"/>
 
-        <dxg:DataGridView ItemsSource="{Binding SelectableOcrItems}">
+        <dxg:DataGridView MaximumHeightRequest="128" ItemsSource="{Binding SelectableOcrNames}">
             <dxg:DataGridView.Columns>
-                <dxg:TextColumn FieldName="Name"/>
+  
+                <dxg:TemplateColumn FieldName="Name" Caption="Employee" MinWidth="200">
+                    <dxg:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout VerticalOptions="Center">
+
+                                <!-- Selected? -->
+                                <CheckBox IsChecked="{Binding Path=Item.IsChecked}"/>
+
+                                <!-- Name -->
+                                <Label Text="{Binding Path=Item.Name}"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="20"/>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </dxg:TemplateColumn.DisplayTemplate>
+                </dxg:TemplateColumn>
+
                 <!-- Other columns -->
             </dxg:DataGridView.Columns>
         </dxg:DataGridView>
